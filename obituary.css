@@ -95,7 +95,8 @@ main {
     margin: 20px 0;
 }
 
-//* 幻灯片容器 */
+
+/* 幻灯片容器 */
 .slideshow-container {
     position: relative;
     max-width: 100%;
@@ -160,11 +161,11 @@ main {
     background-color: #717171;
 }
 
+/* 幻灯片图片样式 */
 .slide img {
     width: 100%; /* 使图片宽度填满容器 */
     height: auto; /* 保持图片纵横比 */
-    display: block; /* 让图片显示为块级元素 */
-    object-fit: cover; /* 覆盖容器，保持纵横比 */
+    object-fit: contain; /* 保持图片完整显示 */
 }
 
 @media (max-width: 768px) {
