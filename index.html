@@ -107,28 +107,26 @@
     }
 }</style>
 
-<!-- 追思相片集 -->
+    <!-- 追思相片集 -->
 <section>
     <h2><strong>追思相片集</strong></h2>
     <div class="slideshow-container">
-        <div class="slides fade">
+        <div class="slide fade">
             <img src="image/IMG_0671.jpeg" alt="照片1">
         </div>
-        <div class="slides fade">
+        <div class="slide fade">
             <img src="image/IMG_1790.jpeg" alt="照片2">
         </div>
-        <div class="slides fade">
+        <div class="slide fade">
             <img src="image/IMG_9089.jpeg" alt="照片3">
         </div>
-        <!-- 左右切换按钮 -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <!-- 圆点导航 -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
     </div>
 </section>
 
@@ -279,27 +277,34 @@
     
 
 
-let slideIndex = 0;
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function showSlides() {
+// 控制幻灯片的切换
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// 显示当前幻灯片
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
     let i;
     const slides = document.getElementsByClassName("slide");
     const dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 2000); // 切换时间为 2 秒
 }
-
-showSlides();
-        
         // 渐显文本效果
         const fadeInTexts = document.querySelectorAll('.fade-in-text');
         fadeInTexts.forEach((text, index) => {
