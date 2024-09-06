@@ -112,29 +112,25 @@
     <h2><strong>追思相片集</strong></h2>
     <div class="slideshow-container">
         <div class="slides fade">
-            <img src="image/IMG_0671.jpeg" alt="照片1" style="width:100%">
+            <img src="image/IMG_0671.jpeg" alt="照片1">
         </div>
         <div class="slides fade">
-            <img src="image/IMG_1790.jpeg" alt="照片2" style="width:100%">
+            <img src="image/IMG_1790.jpeg" alt="照片2">
         </div>
         <div class="slides fade">
-            <img src="image/IMG_9089.jpeg" alt="照片3" style="width:100%">
+            <img src="image/IMG_9089.jpeg" alt="照片3">
         </div>
-        
         <!-- 左右切换按钮 -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
-    
     <!-- 圆点导航 -->
     <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span> 
-        <span class="dot" onclick="currentSlide(2)"></span> 
-        <span class="dot" onclick="currentSlide(3)"></span> 
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
     </div>
 </section>
-<body>
-
 
         <!-- 致贈花籃部分 -->
         <section id="donate-flower">
@@ -282,35 +278,40 @@
         };
     
 
-let slideIndex = 0;
-showSlides();
 
-function showSlides() {
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// 处理幻灯片的切换
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// 控制幻灯片显示
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+// 显示当前幻灯片
+function showSlides(n) {
+    let i;
     let slides = document.getElementsByClassName("slides");
     let dots = document.getElementsByClassName("dot");
-    for (let i = 0; i < slides.length; i++) {
+    
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    
+    for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    for (let i = 0; i < dots.length; i++) {
+    
+    for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
+    
     slides[slideIndex-1].style.display = "block";  
     dots[slideIndex-1].className += " active";
-    setTimeout(showSlides, 5000); // 每5秒切换一次
 }
-
-function plusSlides(n) {
-    slideIndex += n - 1;
-    showSlides();
-}
-
-function currentSlide(n) {
-    slideIndex = n - 1;
-    showSlides();
-}
-    
 
         // 渐显文本效果
         const fadeInTexts = document.querySelectorAll('.fade-in-text');
