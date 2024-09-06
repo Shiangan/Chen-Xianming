@@ -1,324 +1,275 @@
-/* 通用样式 */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
 
-header {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-header .logo {
-    max-width: 100px;
-    height: auto;
-}
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
 
-header h1 {
-    font-size: 24px;
-    margin-top: 10px;
-}
+        header .logo {
+            max-width: 100px;
+            height: auto;
+        }
 
-main {
-    padding: 20px;
-}
+        header h1 {
+            font-size: 24px;
+            margin-top: 10px;
+        }
 
-/* 主要照片部分 */
-.main-photo-section img {
-    width: 80%;
-    max-width: 600px; /* 调整最大宽度为600px */
-    height: auto;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin: 0 auto 20px auto;
-}
+        main {
+            padding: 20px;
+        }
 
-#life-story {
-    text-align: center;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
+        /* 主要照片部分 */
+        .main-photo-section img {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto 20px auto;
+        }
 
-/* 訃聞纸本部分 */
-.paper-obituary-section img {
-    width: 80%;
-    max-width: 600px; /* 调整最大宽度为600px */
-    height: auto;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin: 0 auto 20px auto;
-}
+        #life-story {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
 
-.paper-obituary-section h2 {
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 15px;
-}
+        /* 訃聞纸本部分 */
+        .paper-obituary-section img {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0 auto 20px auto;
+        }
 
-/* 追思与緬懷部分 */
-.remembrance-details {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
-    margin-bottom: 20px;
-}
+        .paper-obituary-section h2 {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
 
-.remembrance-item {
-    flex: 1 1 calc(50% - 40px); /* 两栏布局 */
-    max-width: calc(50% - 40px);
-    background-color: #fff;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
+        /* 追思与緬懷部分 */
+        .remembrance-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
 
-/* 页脚部分 */
-footer {
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
+        .remembrance-item {
+            flex: 1 1 calc(50% - 40px);
+            max-width: calc(50% - 40px);
+            background-color: #fff;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-footer p {
-    margin: 5px 0;
-    color: #333;
-}
+        /* 追思相片集 */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+        }
 
-.footer-signature {
-    font-weight: bold;
-}
+        .slide {
+            display: none;
+            width: 100%;
+            height: auto;
+        }
 
-/* 响应式设计：在小屏幕上的适应 */
-@media (max-width: 768px) {
-    .remembrance-item {
-        flex: 1 1 100%; /* 单栏布局 */
-        max-width: 100%;
-    }
+        .fade {
+            animation: fade 1.5s ease-in-out;
+        }
 
-    .main-photo-section img,
-    .paper-obituary-section img,
-    .business-card-img {
-        width: 100%;
-        max-width: none;
-    }
-}
+        @keyframes fade {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
 
-/* 渐显文字效果 */
-.fade-in-text {
-    opacity: 0;
-    transition: opacity 2s ease-in;
-    text-align: center;
-    font-size: 18px;
-    margin: 20px .slideshow-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden; /* 隐藏超出容器的部分 */
-}
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 3px;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-.slide {
-    display: none; /* 隐藏幻灯片，JavaScript中设置可见 */
-    width: 100%;
-    height: auto;
-}
+        .next {
+            right: 0;
+        }
 
-.fade {
-    animation: fade 1.5s ease-in-out;
-}
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
 
-@keyframes fade {
-    from { opacity: 0.4; }
-    to { opacity: 1; }
-}
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 3px;
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0.5); /* 背景色 */
-}
+        .active, .dot:hover {
+            background-color: #717171;
+        }
 
-.next {
-    right: 0;
-}
+        .slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
+        /* 花篮画廊 */
+        #flower-basket-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
 
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
+        .flower-basket-item {
+            max-width: 200px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            background-color: #fff;
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.active, .dot:hover {
-    background-color: #717171;
-}
+        .flower-basket-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
 
-.slide img {
-    width: 100%; /* 使图片宽度填满容器 */
-    height: auto; /* 保持图片纵横比 */
-    object-fit: cover; /* 覆盖容器，保持纵横比 */
-}
+        .price {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
 
-/* 花篮画廊 */
-.flower-basket-item {
-    max-width: 180px; /* 调整最大宽度为180px */
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    background-color: #fff;
-    margin: 10px; /* 在项目四周添加10像素的外边距，避免过于拥挤 */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 添加过渡效果 */
-}
+        /* 固定聯絡方式 */
+        #fixed-links {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: flex;
+            gap: 10px;
+        }
 
-.flower-basket-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto; /* 图片居中 */
-}
+        #fixed-links a {
+            display: block;
+        }
 
-.price {
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333; /* 确保文字颜色与背景有良好的对比 */
-    text-align: center; /* 价格文本居中 */
-}
+        /* 名片及分享按钮 */
+        #business-card {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-/* 悬停效果 */
-.flower-basket-item:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: scale(1.05); /* 略微放大效果 */
-}
+        .business-card-img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-/* 响应式设计 - 小屏幕适配 */
-@media (max-width: 480px) {
-    .flower-basket-item {
-        max-width: 100%; /* 在小屏幕上让项目占满可用空间 */
-    }
-}
+        #share-buttons {
+            margin-top: 20px;
+        }
 
-/* 固定聯絡方式 */
-#fixed-links {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .share-btn {
+            display: inline-block;
+            margin: 0 5px;
+        }
 
-#fixed-links a {
-    display: inline-block;
-}
+        .share-btn img {
+            width: 30px;
+            height: 30px;
+        }
 
-/* 名片及分享按钮部分 */
-#business-card {
-    text-align: center;
-    margin: 30px 0;
-}
-
-.business-card-img {
-    width: 80%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#share-buttons {
-    margin-top: 20px;
-}
-
-#share-buttons p {
-    margin-bottom: 10px;
-}
-
-.share-btn {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.share-btn img {
-    width: 30px;
-    height: 30px;
-}
-
-    <style>
-        /* 页脚部分的样式 */
+        /* 页脚 */
         footer {
-            background-color: #f4f4f4; /* 背景颜色 */
-            padding: 20px; /* 内边距 */
-            text-align: center; /* 文本居中 */
-            font-family: Arial, sans-serif; /* 字体 */
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
         }
 
         footer p {
-            margin: 5px 0; /* 上下外边距 */
-            color: #333; /* 文字颜色 */
+            margin: 5px 0;
+            color: #333;
         }
 
         .footer-signature {
-            font-weight: bold; /* 字体加粗 */
+            font-weight: bold;
         }
 
-        .bold {
-            font-weight: bold; /* 字体加粗 */
-            text-decoration: none; /* 去掉链接下划线 */
+        /* 渐显文字效果 */
+        .fade-in-text {
+            opacity: 0;
+            transition: opacity 2s ease-in;
+            text-align: center;
+            font-size: 18px;
+            margin: 20px;
         }
 
-        footer img {
-            vertical-align: middle; /* 图标垂直对齐 */
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .remembrance-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+
+            .main-photo-section img,
+            .paper-obituary-section img,
+            .business-card-img {
+                width: 100%;
+                max-width: none;
+            }
         }
-
-        footer a {
-            margin: 0 10px; /* 图标间距 */
-        }
-
-/* 响应式设计：在小屏幕上的适应 */
-@media (max-width: 768px) {
-    .remembrance-item {
-        flex: 1 1 100%; /* 单栏布局 */
-        max-width: 100%;
-    }
-
-    .main-photo-section img,
-    .paper-obituary-section img,
-    .business-card-img {
-        width: 100%;
-        max-width: none;
-    }
-}
+    </style>
+</head>
