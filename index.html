@@ -110,143 +110,29 @@
 <!-- 追思相片集 -->
 <section>
     <h2><strong>追思相片集</strong></h2>
-    <div class="slideshow">
-        <div class="slides">
-            <div class="slide"><img src="image/IMG_0671.jpeg" alt="照片1"></div>
-            <div class="slide"><img src="image/IMG_1790.jpeg" alt="照片2"></div>
-            <div class="slide"><img src="image/IMG_9089.jpeg" alt="照片3"></div>
+    <div class="slideshow-container">
+        <div class="slides fade">
+            <img src="image/IMG_0671.jpeg" alt="照片1" style="width:100%">
         </div>
+        <div class="slides fade">
+            <img src="image/IMG_1790.jpeg" alt="照片2" style="width:100%">
+        </div>
+        <div class="slides fade">
+            <img src="image/IMG_9089.jpeg" alt="照片3" style="width:100%">
+        </div>
+        
+        <!-- 左右切换按钮 -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <!-- 圆点导航 -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
 </section>
-
-<style>
-/* 幻灯片容器 */
-.slideshow {
-    width: 100%;
-    max-width: 80%; /* 限制幻灯片宽度 */
-    height: 50vh; /* 调整高度 */
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto; /* 居中对齐 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-/* 幻灯片内容 */
-.slides {
-    display: flex;
-    transition: transform 1s ease-in-out; /* 添加过渡效果 */
-    width: 300%; /* 根据幻灯片数量调整宽度 */
-}
-
-/* 每张幻灯片 */
-.slide {
-    flex: 0 0 100%; /* 每张幻灯片占100%的宽度 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* 幻灯片中的图片 */
-.slides img {
-    width: 100%; /* 让图片自适应幻灯片宽度 */
-    height: auto;
-    object-fit: contain; /* 确保图片适应容器且不会被裁剪 */
-    max-height: 100%; /* 确保图片不会超出幻灯片高度 */
-}
-
-/* 可选：添加按钮以切换幻灯片 */
-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-}
-
-button.prev {
-    left: 10px;
-}
-
-button.next {
-    right: 10px;
-}
-</style>
-
-<script>
-    // JavaScript 代码以实现幻灯片切换效果
-    let currentIndex = 0;
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slide').length;
-
-    function showSlide(index) {
-        slides.style.transform = `translateX(${-index * 100}%)`;
-    }
-
-    document.querySelector('.prev').addEventListener('click', () => {
-        currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
-        showSlide(currentIndex);
-    });
-
-    document.querySelector('.next').addEventListener('click', () => {
-        currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
-        showSlide(currentIndex);
-    });
-</script>
-
-<!-- 添加按钮以切换幻灯片 -->
-<button class="prev">上一张</button>
-<button class="next">下一张</button>
-        <style>
-        /* 幻灯片容器 */
-        .slideshow {
-            width: 100%;
-            max-width: 80%; /* 确保幻灯片不会超出页面宽度 */
-            height: 50vh; /* 根据需求调整高度 */
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto; /* 居中对齐幻灯片 */
-            box-sizing: border-box; /* 包括内边距和边框在内的宽度和高度计算 */
-        }
-
-        /* 幻灯片内容 */
-        .slides {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            transition: transform 1s ease-in-out; /* 添加过渡效果 */
-        }
-
-        /* 每张幻灯片 */
-        .slides div {
-            flex-shrink: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* 幻灯片中的图片 */
-   /* 幻灯片中的图片 */
-.slides img {
-    max-height: 50vh; /* 确保所有图片高度一致 */
-    width: auto; /* 保持宽度自动调整 */
-    object-fit: contain; /* 保持图片比例并适应容器 */
-}
-    </style>
-</head>
 <body>
 
 
@@ -396,54 +282,35 @@ button.next {
         };
     
 
-        // 幻灯片播放功能
-        let slideIndex = 0;
+let slideIndex = 0;
+showSlides();
 
-        function showSlides() {
-            const slides = document.querySelectorAll(".slides div");
-            slides.forEach(slide => slide.style.display = "none");
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 3000); // 每隔3秒切換幻燈片
-        }
+function showSlides() {
+    let slides = document.getElementsByClassName("slides");
+    let dots = document.getElementsByClassName("dot");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 5000); // 每5秒切换一次
+}
 
-        function plusSlides(n) {
-            slideIndex += n;
-            const slides = document.querySelectorAll(".slides div");
-            if (slideIndex > slides.length) { slideIndex = 1; }
-            if (slideIndex < 1) { slideIndex = slides.length; }
-            showSlides();
-        }
+function plusSlides(n) {
+    slideIndex += n - 1;
+    showSlides();
+}
 
-        showSlides(); // 初次調用以顯示第一張幻燈片
-
-        // 花篮画廊显示/隐藏功能
-        document.getElementById('show-flower-baskets').addEventListener('click', function() {
-            const gallery = document.getElementById('flower-basket-gallery');
-            if (gallery.style.display === 'none') {
-                gallery.style.display = 'flex';
-            } else {
-                gallery.style.display = 'none';
-            }
-        });
-
-        // 追思动画
-        function animateTimeline() {
-            const timelineBlocks = document.querySelectorAll(".VivaTimeline .event");
-            timelineBlocks.forEach(function (block) {
-                const rect = block.getBoundingClientRect();
-                if (rect.top <= window.innerHeight * 0.75 && rect.bottom >= 0) {
-                    block.classList.add("animated");
-                } else {
-                    block.classList.remove("animated");
-                }
-            });
-        }
-
-        // 初始化动画并监听滚动事件
-        animateTimeline();
-        window.addEventListener('scroll', animateTimeline);
+function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+}
+    
 
         // 渐显文本效果
         const fadeInTexts = document.querySelectorAll('.fade-in-text');
