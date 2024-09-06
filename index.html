@@ -107,18 +107,101 @@
     }
 }</style>
 
-        <!-- 追思相片集 -->
-        <section>
-            <h2><strong>追思相片集</strong></h2>
-            <div class="slideshow">
-                <div class="slides">
-                    <div><img src="image/IMG_0671.jpeg" alt="照片1"></div>
-                    <div><img src="image/IMG_1790.jpeg" alt="照片2"></div>
-                    <div><img src="image/IMG_9089.jpeg" alt="照片3"></div>
-                </div>
-            </div>
-        </section>
+<!-- 追思相片集 -->
+<section>
+    <h2><strong>追思相片集</strong></h2>
+    <div class="slideshow">
+        <div class="slides">
+            <div class="slide"><img src="image/IMG_0671.jpeg" alt="照片1"></div>
+            <div class="slide"><img src="image/IMG_1790.jpeg" alt="照片2"></div>
+            <div class="slide"><img src="image/IMG_9089.jpeg" alt="照片3"></div>
+        </div>
+    </div>
+</section>
 
+<style>
+/* 幻灯片容器 */
+.slideshow {
+    width: 100%;
+    max-width: 80%; /* 限制幻灯片宽度 */
+    height: 50vh; /* 调整高度 */
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto; /* 居中对齐 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* 幻灯片内容 */
+.slides {
+    display: flex;
+    transition: transform 1s ease-in-out; /* 添加过渡效果 */
+    width: 300%; /* 根据幻灯片数量调整宽度 */
+}
+
+/* 每张幻灯片 */
+.slide {
+    flex: 0 0 100%; /* 每张幻灯片占100%的宽度 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 幻灯片中的图片 */
+.slides img {
+    width: 100%; /* 让图片自适应幻灯片宽度 */
+    height: auto;
+    object-fit: contain; /* 确保图片适应容器且不会被裁剪 */
+    max-height: 100%; /* 确保图片不会超出幻灯片高度 */
+}
+
+/* 可选：添加按钮以切换幻灯片 */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+</style>
+
+<script>
+    // JavaScript 代码以实现幻灯片切换效果
+    let currentIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = document.querySelectorAll('.slide').length;
+
+    function showSlide(index) {
+        slides.style.transform = `translateX(${-index * 100}%)`;
+    }
+
+    document.querySelector('.prev').addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? totalSlides - 1 : currentIndex - 1;
+        showSlide(currentIndex);
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        currentIndex = (currentIndex === totalSlides - 1) ? 0 : currentIndex + 1;
+        showSlide(currentIndex);
+    });
+</script>
+
+<!-- 添加按钮以切换幻灯片 -->
+<button class="prev">上一张</button>
+<button class="next">下一张</button>
         <style>
         /* 幻灯片容器 */
         .slideshow {
@@ -156,34 +239,16 @@
         }
 
         /* 幻灯片中的图片 */
-        .slides img {
-            width: 100%; /* 确保图片宽度适应容器 */
-            height: auto; /* 保持图片高度按比例缩放 */
-            max-height: 100%; /* 图片高度不能超过容器的高度 */
-            object-fit: contain; /* 确保图片适应容器且不会被裁剪 */
-        }
+   /* 幻灯片中的图片 */
+.slides img {
+    max-height: 50vh; /* 确保所有图片高度一致 */
+    width: auto; /* 保持宽度自动调整 */
+    object-fit: contain; /* 保持图片比例并适应容器 */
+}
     </style>
 </head>
 <body>
 
-
-<script>
-    let slideIndex = 0;
-    const slides = document.querySelector('.slides');
-    const totalSlides = document.querySelectorAll('.slides div').length;
-
-    function showSlide(index) {
-        slides.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextSlide() {
-        slideIndex = (slideIndex + 1) % totalSlides;
-        showSlide(slideIndex);
-    }
-
-    setInterval(nextSlide, 3000); // 每3秒切换一次幻灯片
-</script>
-        </style>
 
         <!-- 致贈花籃部分 -->
         <section id="donate-flower">
