@@ -96,18 +96,25 @@ main {
 }
 
 /* 追思相片集 */
-//* 幻灯片容器 */
+/* 幻灯片容器 */
 .slideshow-container {
     position: relative;
     max-width: 100%;
     margin: auto;
-    overflow: hidden; /* 确保不显示超出范围的部分 */
+    overflow: hidden; /* 隐藏超出容器的部分 */
 }
 
-.slides {
-    display: none; /* 默认隐藏幻灯片 */
+/* 每张幻灯片 */
+.slide {
+    display: none; /* 隐藏幻灯片，JavaScript中设置可见 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
+/* 幻灯片动画 */
 .fade {
     animation: fade 1.5s ease-in-out;
 }
@@ -128,17 +135,16 @@ main {
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    border-radius: 3px;
     user-select: none;
 }
 
 .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
 }
 
 .prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* 圆点导航 */
