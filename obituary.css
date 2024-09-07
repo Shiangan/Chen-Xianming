@@ -53,12 +53,12 @@ header h1 {
 /* 引入自定义字体 */
 @font-face {
     font-family: 'WenDingPoster';
-    src: url('文鼎海報體.tiff') format('tiff');
+    src: url('文鼎海報體.ttf') format('tiff');
 }
 
 @font-face {
     font-family: 'ChenYu';
-    src: url('辰魚落雁體.tiff') format('tiff');
+    src: url('辰魚落雁體.ttf') format('tiff');
 }
 
 /* 应用到“陳顯銘訃告” */
