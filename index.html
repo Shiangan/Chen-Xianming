@@ -40,7 +40,8 @@
     <strong>感謝親友們的致意與陪伴，給予顯銘先生最真切的祝福，家人們銘記在心，衷心感謝</strong>
 </p>
          <style>
-             /* 淡入效果 */
+
+/* 淡入效果 */
 .fade-in-text {
     opacity: 0;
     animation: fadeIn 2s forwards;
@@ -51,7 +52,8 @@
         opacity: 1;
     }
 }
-         #life-story {
+
+#life-story {
     text-align: center;
     font-size: 18px; /* 可以根据需要调整字体大小 */
     line-height: 1.6; /* 行间距 */
@@ -60,14 +62,21 @@
     padding: 20px; /* 适当增加内边距 */
 }
 
-#life-story {
-    text-align: center;
-    font-size: 18px;
-    line-height: 1.6;
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
+/* 响应式设计 */
+@media (max-width: 600px) {
+    #life-story {
+        font-size: 16px; /* 小屏幕上字体略小 */
+        padding: 10px; /* 减少内边距 */
+    }
 }
+
+@media (max-width: 400px) {
+    #life-story {
+        font-size: 14px; /* 更小屏幕上的字体大小 */
+        padding: 5px; /* 更小的内边距 */
+    }
+}
+
 </style>
 
         <!-- 訃告紙本部分 -->
