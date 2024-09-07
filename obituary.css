@@ -236,6 +236,23 @@ footer p {
     color: #333; /* 字体颜色 */
 }
 
+#life-story {
+    text-align: center;
+    font-size: 16px; /* 适合手机的字体大小 */
+    line-height: 1.6; /* 行间距 */
+    margin: 0 auto;
+    max-width: 100%; /* 适应手机屏幕宽度 */
+    padding: 10px; /* 适当减少内边距 */
+}
+
+/* 响应式设计 */
+@media (max-width: 600px) {
+    #life-story {
+        font-size: 14px; /* 小屏幕上更小的字体大小 */
+        padding: 5px; /* 更小的内边距 */
+    }
+}
+
 /* 调整电脑显示效果 */
 @media (min-width: 1024px) {
     footer {
