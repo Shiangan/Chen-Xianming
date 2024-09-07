@@ -58,6 +58,7 @@ header h1 {
 }
 
 /* 追思与緬懷部分 */
+.remembrance
 .remembrance-details {
     text-align: center;
     display: flex;
@@ -161,6 +162,7 @@ header h1 {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    text-align: center
 }
 
 .flower-basket-item {
