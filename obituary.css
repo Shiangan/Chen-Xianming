@@ -48,6 +48,27 @@ header h1 {
     margin: 0 auto 20px auto;
 }
 
+/* 引入自定义字体 */
+@font-face {
+    font-family: 'WenDingPoster';
+    src: url('文鼎海報體.tiff') format('tiff');
+}
+
+@font-face {
+    font-family: 'ChenYu';
+    src: url('辰魚落雁體.tiff') format('tiff');
+}
+
+/* 应用到“陳顯銘訃告” */
+#paper-obituary h2 {
+    font-family: 'WenDingPoster', sans-serif; /* 使用文鼎海報體 */
+}
+
+/* 应用到页脚 */
+footer {
+    font-family: 'ChenYu', serif; /* 使用辰魚落雁體 */
+}
+
 /* 訃告正本部分样式 */
 .paper-obituary-section {
     text-align: center; /* 内容居中对齐 */
