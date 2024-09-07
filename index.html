@@ -19,7 +19,7 @@
 </head>
     
     <audio id="background-music" autoplay loop>
-        <source src="千風之歌.m4a" type="audio/mpeg">
+        <source src="千風之歌.m4a" type="audio/mp3">
         瀏覽器不支持音頻播放。
     </audio>
  
@@ -33,11 +33,23 @@
         <section class="main-photo-section">
             <img id="main-photo" src="image/劉及人的主要照片.JPG" alt="追思照片">
             <p id="life-story">
-                <strong>我們敬愛的親人，陳顯銘先生，於113年09月06日，上午07：30，在家人的陪伴下，安詳離世。</strong>
-            </p>
-            <p>護喪妻 蔡孟玲 率 孝男 澤侖 孝女 靜玟 靜卉 亦君 親視含殮 遵禮成服 豎靈於 台北懷愛館（原第二殯儀館）景行樓 3F 蓮位堂［L1-18]</p>
-            <p>將設奠於113年09月19日（四）舉行追思會儀式，感謝親友們的致意與陪伴，給予顯銘先生最真切的祝福，家人們銘記在心，衷心感謝。</p>
+            <p class="fade-in-text"><strong>我們敬愛的親人，陳顯銘先生，於113年09月06日，上午07：30，在家人的陪伴下，安詳離世。</strong></p>
+            <p class="fade-in-text"><strong>護喪妻 蔡孟玲 率 孝男 澤侖 孝女 靜玟 靜卉 亦君 親視含殮 遵禮成服 豎靈於 台北懷愛館（原第二殯儀館）景行樓 3F 蓮位堂［L1-18]</strong></p>
+            <p class="fade-in-text"><strong>將設奠於113年09月19日（四）舉行追思會儀式，感謝親友們的致意與陪伴，給予顯銘先生最真切的祝福，家人們銘記在心，衷心感謝。</strong></p>
         </section>
+
+         <style>
+             /* 淡入效果 */
+.fade-in-text {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}</style>
 
         <!-- 訃告紙本部分 -->
         <section class="paper-obituary-section">
@@ -71,6 +83,12 @@
                     <p><strong>上午 09：30 公奠禮</strong></p>
                 </div>
 
+                <div class="remembrance-item">
+                    <h3><strong>聯繫信息</strong></h3>
+                    <p><strong>靜玫📞0918-155-682</strong></p>
+                    <p><strong>亦君📞0933-398-781</strong></p>
+                </div>
+
                 <!-- 地圖嵌入 -->
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.6055113137354!2d121.55302529999999!3d25.0135172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa3b0390f463%3A0x9082f68f52193107!2z5Y-w5YyX5biC5oe35oSb6aSo!5e0!3m2!1szh-TW!2stw!4v1723546074779!5m2!1szh-TW!2stw"
@@ -89,9 +107,6 @@
             <p class="fade-in-text"><strong>感謝親友們在這段時間的慰問與關心，您的關懷和鼓勵，陪伴我們度過了這段艱難的時光。</strong></p>
             <p class="fade-in-text"><strong> 敬邀您，與我們一同追思懷念顯銘先生的美好回憶，並向您獻上最深的敬意。</strong></p>
             <p class="fade-in-text"><strong>謝謝您！鞠躬。</strong></p>
-            
-                              <p class="fade-in-text">靜玫📞0918-155-682</p>
-                              <p class="fade-in-text">亦君📞0933-398-781</p>
         </div>
 
          <style>
@@ -106,29 +121,6 @@
         opacity: 1;
     }
 }</style>
-
-    <!-- 追思相片集 -->
-<section>
-    <h2><strong>追思相片集</strong></h2>
-    <div class="slideshow-container">
-        <div class="slide fade">
-            <img src="image/IMG_0671.jpeg" alt="照片1">
-        </div>
-        <div class="slide fade">
-            <img src="image/IMG_1790.jpeg" alt="照片2">
-        </div>
-        <div class="slide fade">
-            <img src="image/IMG_9089.jpeg" alt="照片3">
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-    </div>
-</section>
 
         <!-- 致贈花籃部分 -->
         <section id="donate-flower">
