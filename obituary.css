@@ -68,17 +68,17 @@ header h1 {
 }
 
 /* 追思緬懷部分样式 */
+/* 追思緬懷部分样式 */
 #remembrance {
-    padding: 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-    margin-bottom: 20px;
+    text-align: center; /* 内容居中对齐 */
+    margin: 20px auto; /* 上下边距和水平居中 */
+    padding: 20px; /* 内边距 */
 }
 
 #remembrance h2 {
-    font-size: 28px; /* 增大标题字体 */
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 32px; /* 增大标题字体 */
+    margin-bottom: 20px; /* 标题底部边距 */
+    color: #333; /* 标题颜色 */
     font-weight: bold; /* 标题加粗 */
 }
 
@@ -86,7 +86,6 @@ header h1 {
     display: flex;
     flex-direction: column; /* 在小屏幕上纵向排列 */
     gap: 20px;
-    justify-content: center;
     align-items: center; /* 内容水平居中对齐 */
 }
 
@@ -97,30 +96,22 @@ header h1 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin: 0 auto; /* 内容居中对齐 */
-    font-weight: bold; /* 内容加粗 */
+    width: 100%; /* 确保宽度一致 */
+    max-width: 600px; /* 设置最大宽度 */
+    box-sizing: border-box; /* 包含内边距和边框在宽度内 */
 }
 
 .remembrance-item h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #444;
+    font-size: 20px; /* 标题字体大小 */
+    margin-bottom: 10px; /* 标题底部边距 */
+    color: #444; /* 标题颜色 */
     font-weight: bold; /* 项目标题加粗 */
 }
 
 .remembrance-item p {
-    font-size: 16px; /* 增大内容字体 */
-    margin: 5px 0;
-    color: #555;
-}
-
-.remembrance-item a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-.remembrance-item a:hover {
-    text-decoration: underline;
+    font-size: 16px; /* 内容字体大小 */
+    margin: 5px 0; /* 内容上下边距 */
+    color: #555; /* 内容颜色 */
 }
 
 /* 响应式设计 */
