@@ -79,31 +79,23 @@ p {
     margin-bottom: 15px;
 }
 
-/* 追思与緬懷部分 */
-.remembrance
-.remembrance-details {
+/* 追思與緬懷部分 */
+#remembrance {
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-around;
     margin-bottom: 20px;
 }
 
-.life-story{
-    flex: 1 1 calc(50% - 40px);
-    max-width: calc(50% - 40px);
-    background-color: #fff;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.remembrance-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* 确保内容在中间对齐 */
 }
 
+/* 每个追思项目的样式 */
 .remembrance-item {
-    flex: 1 1 calc(50% - 40px);
-    max-width: calc(50% - 40px);
+    flex: 1 1 calc(50% - 40px); /* 确保在较大屏幕上每项占一半宽度减去间距 */
+    max-width: calc(50% - 40px); /* 控制最大宽度 */
     background-color: #fff;
     padding: 15px;
     border: 2px solid #ddd;
@@ -112,6 +104,12 @@ p {
     text-align: center;
 }
 
+@media (max-width: 768px) {
+    .remembrance-item {
+        flex: 1 1 100%; /* 在小屏幕上每项占据整行宽度 */
+        max-width: 100%;
+    }
+}
 /* 花篮画廊 */
 #flower-basket-gallery {
     display: flex;
