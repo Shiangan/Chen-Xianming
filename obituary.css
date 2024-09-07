@@ -34,7 +34,7 @@ header .logo {
 }
 
 header h1 {
-    font-family: 'ChenYu', sans-serif; /* 使用文鼎海報體 */
+    font-family: 'ChenYu', Ariel; /* 使用辰魚落雁體 */
     font-size: 36px; /* 根据需要调整字体大小 */
     color: #333; /* 字体颜色 */
     margin: 0; /* 清除默认的 margin */
