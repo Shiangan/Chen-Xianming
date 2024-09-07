@@ -29,8 +29,10 @@ header .logo {
 }
 
 header h1 {
-    font-size: 24px;
-    margin-top: 10px;
+    font-family: 'WenDingPoster', sans-serif; /* 使用文鼎海報體 */
+    font-size: 36px; /* 根据需要调整字体大小 */
+    color: #333; /* 字体颜色 */
+    margin: 0; /* 清除默认的 margin */
 }
 
 
@@ -262,9 +264,10 @@ header h1 {
 }
 
 /* 页脚样式 */
+/* 页脚样式 */
 footer {
     text-align: center;
-    font-family: 'ChenYu', serif; 'Arial', sans-serif; /* 更改字体为 Arial，您可以根据需要替换为其他字体 */
+    font-family: 'ChenYu', serif; /* 设置字体为辰魚落雁體 */
     padding: 20px;
     background-color: #f1f1f1; /* 页脚背景颜色 */
     border-top: 1px solid #ddd; /* 上边框 */
