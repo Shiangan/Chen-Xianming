@@ -1,5 +1,5 @@
 body {
-    font-family: 'Noto Sans TC', sans-serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -33,19 +33,7 @@ header h1 {
     margin-top: 10px;
 }
 
-h2, h3 {
-    font-weight: bold;
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
 
-p {
-    font-weight: 600;
-    font-size: 1.2em;
-    line-height: 1.6;
-}
 
 .main-photo-section img,
 .paper-obituary-section img,
@@ -61,27 +49,60 @@ p {
 }
 
 #remembrance {
-    text-align: center;
-    margin-bottom: 20px;
+    padding: 20px; /* 添加内边距 */
+    background-color: #f9f9f9; /* 背景颜色 */
+    text-align: center; /* 内容居中对齐 */
+    margin-bottom: 20px; /* 底部外边距 */
+}
+
+#remembrance h2 {
+    font-size: 26px; /* 追思缅怀标题的字体大小 */
+    margin-bottom: 20px; /* 添加下边距 */
+    color: #333; /* 标题颜色 */
 }
 
 .remembrance-details {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    gap: 20px; /* 项目之间的间距 */
+    justify-content: center; /* 居中对齐 */
 }
 
 .remembrance-item {
-    flex: 1 1 calc(33% - 40px);
-    max-width: calc(33% - 40px);
-    background-color: #fff;
-    padding: 15px;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    flex: 1 1 calc(33% - 40px); /* 设置宽度 */
+    max-width: calc(33% - 40px); /* 最大宽度 */
+    background-color: #fff; /* 背景颜色 */
+    padding: 15px; /* 内边距 */
+    border: 2px solid #ddd; /* 边框 */
+    border-radius: 10px; /* 圆角边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    text-align: center; /* 内容居中对齐 */
 }
+
+.remembrance-item h3 {
+    font-size: 20px; /* 每个项目标题的字体大小 */
+    margin-bottom: 10px; /* 添加下边距 */
+    color: #444; /* 项目标题颜色 */
+}
+
+.remembrance-item p {
+    font-size: 16px; /* 项目详情的字体大小 */
+    margin: 5px 0; /* 上下外边距 */
+    color: #555; /* 详情文字颜色 */
+}
+
+.remembrance-item a {
+    color: #0066cc; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+
+.remembrance-item a:hover {
+    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
+    </style>
+</head>
+<body>
+  
 
 @media (max-width: 768px) {
     .remembrance-item {
