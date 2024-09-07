@@ -160,18 +160,20 @@ header h1 {
 
 #donate-flower h3 {
     font-family: 'ChenYu', Arial;
-    font-size: 24px; /* 标题字体大小 */
+    font-size: 30px; /* 标题字体大小 */
     margin-bottom: 20px; /* 标题底部边距 */
     color: #333; /* 标题颜色 */
 }
 
 #donate-flower p {
-    font-size: 18px; /* 内容字体大小 */
+    font-family: 'ChenYu', Arial;
+    font-size: 24px; /* 内容字体大小 */
     margin: 10px 0; /* 内容上下边距 */
     color: #555; /* 内容颜色 */
 }
 
 #donate-flower a.btn {
+    font-family: 'ChenYu', Arial;
     display: inline-block;
     padding: 10px 20px;
     font-size: 18px; /* 按钮字体大小 */
@@ -273,7 +275,7 @@ footer {
 
 footer p {
     margin: 10px 0;
-    font-size: 30px; /* 调整字体大小 */
+    font-size: 28px; /* 调整字体大小 */
     color: #333; /* 字体颜色 */
 }
 
