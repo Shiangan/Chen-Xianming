@@ -67,6 +67,17 @@ header h1 {
     margin-bottom: 20px;
 }
 
+.life-story{
+    flex: 1 1 calc(50% - 40px);
+    max-width: calc(50% - 40px);
+    background-color: #fff;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
 .remembrance-item {
     flex: 1 1 calc(50% - 40px);
     max-width: calc(50% - 40px);
