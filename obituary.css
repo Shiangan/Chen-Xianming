@@ -6,7 +6,16 @@ body {
     padding: 0;
     background-color: #f4f4f4;
     color: #333;
+
+
+main {
+    max-width: 1200px; /* 设置页面最大宽度，1200px 或其他合适的数值 */
+    margin: 0 auto; /* 自动水平居中 */
+    padding: 20px; /* 给内容添加一些内边距，避免紧贴页面边缘 */
+    background-color: #fff; /* 给内容部分加一个背景色，和页面背景区分开 */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* 给页面加点阴影，增加质感 */
 }
+
 
 header {
     text-align: center;
