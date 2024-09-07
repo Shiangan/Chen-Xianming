@@ -92,10 +92,23 @@ p {
     justify-content: center; /* 确保内容在中间对齐 */
 }
 
+/* 追思與緬懷部分 */
+#remembrance {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.remembrance-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center; /* 确保内容在中间对齐 */
+}
+
 /* 每个追思项目的样式 */
 .remembrance-item {
-    flex: 1 1 calc(50% - 40px); /* 确保在较大屏幕上每项占一半宽度减去间距 */
-    max-width: calc(50% - 40px); /* 控制最大宽度 */
+    flex: 1 1 calc(33% - 40px); /* 确保每项占三分之一的宽度 */
+    max-width: calc(33% - 40px); /* 控制最大宽度 */
     background-color: #fff;
     padding: 15px;
     border: 2px solid #ddd;
@@ -232,11 +245,7 @@ footer p {
 }
 
 /* 响应式设计 */
-@media (max-width: 768px) {
-    .remembrance-item {
-        flex: 1 1 100%;
-        max-width: 100%;
-    }
+
 
     .flower-basket-item {
         max-width: 100%;
