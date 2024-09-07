@@ -259,13 +259,6 @@
             window.onload = function() {
             const audio = document.getElementById('background-music');
 
-            // 静音播放以确保自动播放
-            audio.muted = true;
-            audio.play().then(() => {
-                // 取消静音
-                audio.muted = false;
-            }).catch(error => {
-                console.log('Autoplay was prevented:', error);
             });
         };
     
