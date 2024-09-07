@@ -56,38 +56,36 @@ header h1 {
 }
 
 #remembrance h2 {
-    font-size: 24px; /* 调整标题的字体大小 */
+    font-size: 24px; /* 适当缩小标题字体 */
     margin-bottom: 20px;
     color: #333;
 }
 
 .remembrance-details {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* 在小屏幕上纵向排列 */
     gap: 20px;
     justify-content: center;
 }
 
 .remembrance-item {
-    flex: 1 1 calc(100% - 40px); /* 在小屏幕上宽度占满整行 */
-    max-width: calc(100% - 40px); /* 最大宽度 */
     background-color: #fff;
-    padding: 15px;
-    border: 1px solid #ddd; /* 边框颜色略微变细 */
-    border-radius: 8px; /* 圆角边框略微调整 */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    margin-bottom: 20px; /* 每个项目之间的间距 */
+    margin: 0 auto; /* 中心对齐 */
 }
 
 .remembrance-item h3 {
-    font-size: 18px; /* 调整标题的字体大小 */
+    font-size: 18px;
     margin-bottom: 10px;
     color: #444;
 }
 
 .remembrance-item p {
-    font-size: 14px; /* 调整项目详情的字体大小 */
+    font-size: 14px;
     margin: 5px 0;
     color: #555;
 }
@@ -103,14 +101,22 @@ header h1 {
 
 /* 响应式设计 */
 @media (min-width: 600px) {
+    .remembrance-details {
+        flex-direction: row; /* 在中等屏幕上横向排列 */
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
     .remembrance-item {
-        flex: 1 1 calc(50% - 40px); /* 在中等屏幕上显示两列 */
+        flex: 1 1 calc(50% - 40px); /* 在中等屏幕上每行两列 */
+        max-width: calc(50% - 40px);
     }
 }
 
 @media (min-width: 900px) {
     .remembrance-item {
-        flex: 1 1 calc(33% - 40px); /* 在大屏幕上显示三列 */
+        flex: 1 1 calc(33% - 40px); /* 在大屏幕上每行三列 */
+        max-width: calc(33% - 40px);
     }
 }
     </style>
