@@ -18,7 +18,7 @@
 </head>
     
     <audio id="background-music" autoplay loop>
-        <source src="願得一人心.mp4" type="audio/mp4">
+        <source src="願得一人心.mp4" type="audio/mp3">
         瀏覽器不支持音頻播放。
     </audio>
  
@@ -272,13 +272,17 @@
 
 
     <!-- JavaScript -->
-    <script>
-            window.onload = function() {
-            const audio = document.getElementById('background-music');
-
+   <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // 尝试播放音频
+        const audio = document.getElementById('background-music');
+        if (audio) {
+            audio.play().catch(error => {
+                console.log('自动播放被浏览器阻止，用户可能需要与页面互动。');
             });
-        };
-    
-    </script>
+        }
+    });
+</script>
+
 </body>
 </html>
