@@ -210,6 +210,8 @@ footer p {
 }
 .btn:hover {
     background-color: #2980b9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
 }
     
 /* 渐显文字效果 */
@@ -247,5 +249,11 @@ footer p {
     .business-card-img {
         width: 100%;
         max-width: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .life-story, .remembrance-item {
+        flex: 1 1 100%;
     }
 }
