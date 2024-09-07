@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'WenDingPoster';
+    src: url('文鼎海報體.ttf') format('truetype'); /* 使用 truetype 格式 */
+}
+
+@font-face {
+    font-family: 'ChenYu';
+    src: url('辰魚落雁體.ttf') format('truetype'); /* 使用 truetype 格式 */
+}
+
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
@@ -50,16 +60,8 @@ header h1 {
     margin: 0 auto 20px auto;
 }
 
-/* 引入自定义字体 */
-@font-face {
-    font-family: 'WenDingPoster';
-    src: url('文鼎海報體.ttf') format('tiff');
-}
 
-@font-face {
-    font-family: 'ChenYu';
-    src: url('辰魚落雁體.ttf') format('tiff');
-}
+
 
 /* 应用到“陳顯銘訃告” */
 #header h1 {
