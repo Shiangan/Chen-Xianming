@@ -27,6 +27,22 @@ header h1 {
     margin-top: 10px;
 }
 
+header h2 {
+    font-weight: bold; /* 字体加粗 */
+    font-size: 1.5em; /* 根据需要调整大小 */
+    text-align: center; /* 标题居中 */
+    margin-bottom: 20px; /* 给标题下方一些空间 */
+    color: #333; /* 根据需求调整颜色 */
+}
+
+header h3 {
+    font-weight: bold; /* 字体加粗 */
+    font-size: 1.5em; /* 根据需要调整大小 */
+    text-align: center; /* 标题居中 */
+    margin-bottom: 20px; /* 给标题下方一些空间 */
+    color: #333; /* 根据需求调整颜色 */
+}
+
 /* 主要照片部分 */
 .main-photo-section img {
     width: 100%;
