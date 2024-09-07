@@ -76,7 +76,7 @@ header h1 {
 }
 
 #remembrance h2 {
-    font-size: 32px; /* 增大标题字体 */
+    font-size: 24px; /* 增大标题字体 */
     margin-bottom: 20px; /* 标题底部边距 */
     color: #333; /* 标题颜色 */
     font-weight: bold; /* 标题加粗 */
