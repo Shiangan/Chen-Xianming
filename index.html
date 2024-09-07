@@ -138,6 +138,8 @@
             <p class="fade-in-text"><strong>謝謝您！</strong></p>
         </div>
 
+        
+
          <style>
              /* 淡入效果 */
 .fade-in-text {
@@ -149,7 +151,23 @@
     to {
         opacity: 1;
     }
-}</style>
+}
+         
+         /* 响应式设计 */
+@media (max-width: 600px) {
+    #remembrance-thanks {
+        font-size: 16px; /* 小屏幕上字体略小 */
+        padding: 10px; /* 减少内边距 */
+    }
+}
+
+@media (max-width: 400px) {
+    #remembrance-thanks {
+        font-size: 14px; /* 更小屏幕上的字体大小 */
+        padding: 5px; /* 更小的内边距 */
+    }
+}
+         </style>
 
         <!-- 致贈花籃部分 -->
         <section id="donate-flower">
@@ -213,6 +231,40 @@
 </section>
 
         <style>
+            /* 致贈花籃部分样式 */
+#donate-flower {
+    text-align: center; /* 内容居中对齐 */
+    margin: 20px auto; /* 上下边距和水平居中 */
+    max-width: 800px; /* 最大宽度 */
+    padding: 20px; /* 内边距 */
+}
+
+#donate-flower h3 {
+    font-size: 24px; /* 标题字体大小 */
+    margin-bottom: 20px; /* 标题底部边距 */
+    color: #333; /* 标题颜色 */
+}
+
+#donate-flower p {
+    font-size: 18px; /* 内容字体大小 */
+    margin: 10px 0; /* 内容上下边距 */
+    color: #555; /* 内容颜色 */
+}
+
+#donate-flower a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px; /* 按钮字体大小 */
+    color: #fff; /* 按钮文字颜色 */
+    background-color: #0066cc; /* 按钮背景颜色 */
+    text-decoration: none; /* 去掉下划线 */
+    border-radius: 5px; /* 按钮圆角 */
+}
+
+#donate-flower a.btn:hover {
+    background-color: #004d99; /* 鼠标悬停时背景颜色 */
+}
+            
 #flower-basket-gallery {
     display: flex;
     flex-wrap: wrap;
