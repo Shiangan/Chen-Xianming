@@ -125,7 +125,7 @@ header h1 {
     }
 }
 
-#flower-gift {
+#flower-donate {
     text-align: center; /* 使文本居中对齐 */
     margin: 20px; /* 添加外边距以确保周围有足够的空间 */
     padding: 20px; /* 添加内边距 */
@@ -134,13 +134,13 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果，提升视觉层次 */
 }
 
-#flower-gift h2 {
+#flower-donate h2 {
     font-size: 24px; /* 标题的字体大小 */
     color: #333; /* 标题颜色 */
     margin-bottom: 15px; /* 标题下边距 */
 }
 
-#flower-gift p {
+#flower-donate p {
     font-size: 16px; /* 文本的字体大小 */
     color: #555; /* 文本颜色 */
     margin: 5px 0; /* 上下外边距 */
