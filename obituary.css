@@ -48,6 +48,7 @@ header h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: block;
     margin: 0 auto 20px auto;
+    text-align: center
 }
 
 .paper-obituary-section h2 {
@@ -193,7 +194,7 @@ header h1 {
 /* 名片及分享按钮 */
 #business-card {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .business-card-img {
