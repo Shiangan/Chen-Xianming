@@ -1,6 +1,7 @@
 /* 通用样式 */
 body {
-    font-family: Arial, sans-serif;
+    body {
+    font-family: 'Noto Sans TC', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -33,7 +34,7 @@ header h1 {
     height: auto;
     border: 2px solid #ddd;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: block;
     margin: 0 auto 20px auto;
 }
@@ -252,6 +253,19 @@ footer p {
     font-weight: bold;
 }
 
+    .btn {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #2980b9;
+}
+    
 /* 渐显文字效果 */
 .fade-in-text {
     opacity: 0;
@@ -259,6 +273,7 @@ footer p {
     text-align: center;
     font-size: 18px;
     margin: 20px;
+    animation: fadeIn 3s ease-in forwards;
 }
 
 /* 响应式设计 */
@@ -267,6 +282,12 @@ footer p {
         flex: 1 1 100%;
         max-width: 100%;
     }
+
+    .flower-basket-item {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+}
 
     .main-photo-section img,
     .paper-obituary-section img,
