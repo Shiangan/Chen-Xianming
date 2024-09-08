@@ -332,15 +332,6 @@
 
     <!-- JavaScript -->
    <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
-        // 尝试播放音频
-        const audio = document.getElementById('background-music');
-        if (audio) {
-            audio.play().catch(error => {
-                console.log('自动播放被浏览器阻止，用户可能需要与页面互动。');
-            });
-        }
-    });
        document.addEventListener('DOMContentLoaded', function () {
     function audioAutoPlay() {
         var audio = document.getElementById('audio');
@@ -348,14 +339,6 @@
         document.addEventListener("WeixinJSBridgeReady", function () {
             audio.play();
         }, false);
-    }
-    audioAutoPlay();
-});
-//--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
-document.addEventListener('touchstart', function () {
-    function audioAutoPlay() {
-        var audio = document.getElementById('audio');
-            audio.play();
     }
     audioAutoPlay();
 });
