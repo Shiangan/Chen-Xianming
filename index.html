@@ -18,9 +18,10 @@
 </head>
     
     <audio id="background-music" autoplay loop>
-        <source src="願得一人心.mp4" type="audio/mp4">
-        瀏覽器不支持音頻播放。
-    </audio>
+    <source src="願得一人心.mp4" type="audio/mpeg">
+    <source src="願得一人心.ogg" type="audio/ogg">
+    瀏覽器不支持音頻播放。
+</audio>
  
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
@@ -330,23 +331,31 @@
 </footer>
 
 
-   <script>
+
+<script>
    document.addEventListener('DOMContentLoaded', function () {
        function audioAutoPlay() {
            var audio = document.getElementById('background-music');
-           audio.play().catch(function (e) {
+
+           // 先自动静音播放
+           audio.muted = true;
+           audio.play().then(function() {
+               // 播放成功后再取消静音
+               audio.muted = false;
+           }).catch(function (e) {
                console.log('Auto-play was prevented:', e);
-               // 如果自动播放被阻止，你可以提示用户点击页面以播放音频
+               // 如果自动播放被阻止，可以提示用户交互
            });
 
+           // 兼容微信浏览器
            document.addEventListener("WeixinJSBridgeReady", function () {
                audio.play();
            }, false);
        }
+
        audioAutoPlay();
    });
-   </script>
-
-
+</script>
+    
 </body>
 </html>
