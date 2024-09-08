@@ -228,10 +228,11 @@ header h1 {
     right: 10px;
     display: flex;
     gap: 10px;
-}
-
-#fixed-links a {
-    display: block;
+    align-items: center; /* 确保内容垂直居中 */
+    padding: 5px; /* 减小内边距 */
+    background-color: rgba(255, 255, 255, 0.8); /* 轻微的背景色使其更显眼 */
+    border-radius: 5px; /* 圆角边框 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 轻微的阴影 */
 }
 
 #business-card {
