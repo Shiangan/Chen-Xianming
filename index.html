@@ -30,15 +30,27 @@ document.addEventListener('DOMContentLoaded', function () {
     audio.volume = 0;  // 初始化音量为 0
     audio.muted = true;  // 初始化为静音，确保能自动播放
 
+    // 初始化静音自动播放
+    audio.play().catch(function(error) {
+        console.log('静音播放失败:', error);
+    });
+
     // 检查用户是否有交互，取消静音
     function unmuteAudio() {
-        audio.muted = false;  // 取消静音
-        fadeInAudio();  // 渐显音量
+        if (audio.muted) {
+            audio.muted = false;  // 取消静音
+            fadeInAudio();  // 渐显音量
+            // 移除事件监听器，防止重复触发
+            document.removeEventListener('mousemove', unmuteAudio);
+            window.removeEventListener('scroll', unmuteAudio);
+            document.removeEventListener('click', unmuteAudio);
+        }
     }
 
     // 监测用户移动鼠标或滚动页面
     document.addEventListener('mousemove', unmuteAudio);
     window.addEventListener('scroll', unmuteAudio);
+    document.addEventListener('click', unmuteAudio);
 
     // 渐显函数
     function fadeInAudio() {
