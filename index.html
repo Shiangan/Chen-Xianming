@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
     audio.muted = true;  // 初始化为静音，确保能自动播放
 
     // 初始化静音自动播放
-    audio.play().catch(function(error) {
+    var playPromise = audio.play().catch(function(error) {
         console.log('静音播放失败:', error);
     });
 
@@ -41,16 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
             audio.muted = false;  // 取消静音
             fadeInAudio();  // 渐显音量
             // 移除事件监听器，防止重复触发
-            document.removeEventListener('mousemove', unmuteAudio);
-            window.removeEventListener('scroll', unmuteAudio);
             document.removeEventListener('click', unmuteAudio);
+            document.removeEventListener('touchstart', unmuteAudio); // 适用于移动设备
         }
     }
 
-    // 监测用户移动鼠标或滚动页面
-    document.addEventListener('mousemove', unmuteAudio);
-    window.addEventListener('scroll', unmuteAudio);
+    // 仅在用户点击或触摸时解除静音
     document.addEventListener('click', unmuteAudio);
+    document.addEventListener('touchstart', unmuteAudio);
 
     // 渐显函数
     function fadeInAudio() {
@@ -63,18 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 clearInterval(interval);  // 完成渐显
             }
         }, 200);  // 每200毫秒增加一次音量
-    }
-
-    // 检查是否需要恢复播放时间和状态
-    var savedTime = localStorage.getItem('audioCurrentTime');
-    if (savedTime) {
-        audio.currentTime = parseFloat(savedTime);
-    }
-
-    if (localStorage.getItem('audioPlaying') === 'true') {
-        audio.play().then(fadeInAudio).catch(function (error) {
-            console.log('播放失败:', error);
-        });
     }
 
     // 保存播放时间和状态
@@ -323,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 #donate-flower p {
-    font-size: 20px; /* 内容字体大小 */
+    font-size: 22px; /* 内容字体大小 */
     margin: 10px 0; /* 内容上下边距 */
     color: #555; /* 内容颜色 */
 }
