@@ -17,39 +17,43 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
     
-    <audio id="background-music" autoplay loop>
-        <source src="願得一人心.mp4" type="audio/mp4">
-        <source src="願得一人心.ogg" type="audio/ogg">
-        Your browser does not support the audio element.
-    </audio>
+<audio id="background-music" autoplay loop>
+    <source src="願得一人心.mp4" type="audio/mp4">
+    <source src="願得一人心.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
+<script>
+document.addEventListener('DOMContentLoaded', function () {
     var audio = document.getElementById('background-music');
     audio.volume = 0;  // 初始化音量为 0
 
+    // 从localStorage中获取上次播放时间
+    var savedTime = localStorage.getItem('audioCurrentTime');
+    if (savedTime) {
+        audio.currentTime = parseFloat(savedTime);  // 恢复到上次播放的时间点
+    }
 
-            // 尝试自动播放音频
-            function playAudio() {
-                var playPromise = audio.play();
-                if (playPromise !== undefined) {
-                    playPromise.then(function () {
-                        console.log('音频正在播放');
-                    }).catch(function (error) {
-                        console.log('自动播放被阻止:', error);
-                        // 提示用户进行交互以播放音频
-                        document.addEventListener('click', function () {
-                            audio.play().catch(function (error) {
-                                console.log('播放失败:', error);
-                            });
-                        });
+    // 尝试自动播放音频
+    function playAudio() {
+        var playPromise = audio.play();
+        if (playPromise !== undefined) {
+            playPromise.then(function () {
+                console.log('音频正在播放');
+                fadeInAudio();  // 开始渐显
+            }).catch(function (error) {
+                console.log('自动播放被阻止:', error);
+                // 提示用户进行交互以播放音频
+                document.addEventListener('click', function () {
+                    audio.play().then(fadeInAudio).catch(function (error) {
+                        console.log('播放失败:', error);
                     });
-                }
-            }
+                });
+            });
+        }
+    }
 
-            playAudio();
-
-            // 渐显函数
+    // 渐显函数
     function fadeInAudio() {
         let volume = 0;
         const interval = setInterval(function() {
@@ -64,7 +68,12 @@
 
     playAudio();
 
-    // 处理页面刷新时保持播放
+    // 在播放期间持续保存当前播放时间
+    setInterval(function () {
+        localStorage.setItem('audioCurrentTime', audio.currentTime);
+    }, 1000);  // 每隔1秒保存一次当前时间
+
+    // 处理页面刷新时保持播放状态
     audio.addEventListener('play', function () {
         localStorage.setItem('audioPlaying', 'true');
     });
@@ -81,9 +90,6 @@
     }
 });
 </script>
-
-
-    </script>
 
  
     <header>
