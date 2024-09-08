@@ -23,32 +23,22 @@
     Your browser does not support the audio element.
 </audio>
 
-<audio id="background-music" muted autoplay loop>
-    <source src="願得一人心.mp4" type="audio/mp4">
-    <source src="願得一人心.ogg" type="audio/ogg">
-    Your browser does not support the audio element.
-</audio>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var audio = document.getElementById('background-music');
     audio.volume = 0;  // 初始化音量为 0
-    audio.muted = true;  // 初始化为静音
+    audio.muted = true;  // 初始化为静音，确保能自动播放
 
-    // 检查用户是否已经与页面有过交互
-    function startAudio() {
+    // 检查用户是否有交互，取消静音
+    function unmuteAudio() {
         audio.muted = false;  // 取消静音
-        fadeInAudio();  // 开始渐显
+        fadeInAudio();  // 渐显音量
     }
 
-    // 监测用户滚动或移动鼠标进入页面
-    window.addEventListener('scroll', function() {
-        startAudio();
-    });
-
-    document.addEventListener('mousemove', function() {
-        startAudio();
-    });
+    // 监测用户移动鼠标或滚动页面
+    document.addEventListener('mousemove', unmuteAudio);
+    window.addEventListener('scroll', unmuteAudio);
 
     // 渐显函数
     function fadeInAudio() {
@@ -63,7 +53,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 200);  // 每200毫秒增加一次音量
     }
 
-    // 记录播放状态
+    // 检查是否需要恢复播放时间和状态
+    var savedTime = localStorage.getItem('audioCurrentTime');
+    if (savedTime) {
+        audio.currentTime = parseFloat(savedTime);
+    }
+
+    if (localStorage.getItem('audioPlaying') === 'true') {
+        audio.play().then(fadeInAudio).catch(function (error) {
+            console.log('播放失败:', error);
+        });
+    }
+
+    // 保存播放时间和状态
+    setInterval(function () {
+        localStorage.setItem('audioCurrentTime', audio.currentTime);
+    }, 1000);
+
     audio.addEventListener('play', function () {
         localStorage.setItem('audioPlaying', 'true');
     });
@@ -71,27 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
     audio.addEventListener('pause', function () {
         localStorage.setItem('audioPlaying', 'false');
     });
-
-    // 保存当前播放时间
-    setInterval(function () {
-        localStorage.setItem('audioCurrentTime', audio.currentTime);
-    }, 1000);  // 每隔1秒保存一次当前时间
-
-    // 恢复音频进度
-    var savedTime = localStorage.getItem('audioCurrentTime');
-    if (savedTime) {
-        audio.currentTime = parseFloat(savedTime);
-    }
-
-    // 检查是否需要恢复播放
-    if (localStorage.getItem('audioPlaying') === 'true') {
-        audio.play().then(fadeInAudio).catch(function (error) {
-            console.log('播放失败:', error);
-        });
-    }
 });
 </script>
-
  
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
