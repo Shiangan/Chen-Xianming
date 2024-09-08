@@ -16,45 +16,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
-<body>
-    <audio id="background-music" autoplay loop>
-        <source src="願得一人心.mp4" type="audio/mp4">
-        <source src="願得一人心.ogg" type="audio/ogg">
-        瀏覽器不支持音頻播放。
-    </audio>
+<audio id="background-music" autoplay loop muted>
+    <source src="願得一人心.mp4" type="audio/mp4">
+    <source src="願得一人心.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+</audio>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var audio = document.getElementById('background-music');
-
-            // 尝试恢复音频播放进度
-            var savedTime = localStorage.getItem('audioCurrentTime');
-            if (savedTime) {
-                audio.currentTime = savedTime;
-            }
-
-            // 播放音频
-            function audioAutoPlay() {
-                audio.play().catch(function (e) {
-                    console.log('Auto-play was prevented:', e);
-                    // 提示用户进行交互以播放音频
-                    document.addEventListener('click', function () {
-                        audio.play().catch(function (e) {
-                            console.log('Playback failed:', e);
-                        });
-                    });
-                });
-            }
-
-            audioAutoPlay();
-
-            // 每隔一段时间保存当前播放时间
-            setInterval(function () {
-                if (!audio.paused) {  // 仅在音频播放时保存时间
-                    localStorage.setItem('audioCurrentTime', audio.currentTime);
-                }
-            }, 1000); // 每秒保存一次
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var audio = document.getElementById('background-music');
+        audio.muted = false; // 解除静音
+        audio.play().catch(function (e) {
+            console.log('Playback failed:', e);
         });
+    });
     </script>
  
     <header>
