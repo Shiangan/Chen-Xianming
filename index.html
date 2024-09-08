@@ -63,6 +63,20 @@
                 });
             }
         });
+
+        // 从第三秒开始渐显
+    setTimeout(function() {
+        let volume = 0;
+        const interval = setInterval(function() {
+            if (volume < 1) {
+                volume += 0.05; // 增加音量
+                audio.volume = volume;
+            } else {
+                clearInterval(interval);
+            }
+        }, 200); // 每200毫秒增加音量
+    }, 3000); // 从第三秒开始
+});
     </script>
 
  
