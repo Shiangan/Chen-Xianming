@@ -17,11 +17,53 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 </head>
     
+    <!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訃聞公告</title>
+</head>
+<body>
     <audio id="background-music" autoplay loop>
-    <source src="願得一人心.mp4" type="audio/mp3">
-    <source src="願得一人心.ogg" type="audio/ogg">
-    瀏覽器不支持音頻播放。
-</audio>
+        <source src="願得一人心.mp4" type="audio/mp4">
+        <source src="願得一人心.ogg" type="audio/ogg">
+        瀏覽器不支持音頻播放。
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var audio = document.getElementById('background-music');
+
+            // 尝试恢复音频播放进度
+            var savedTime = localStorage.getItem('audioCurrentTime');
+            if (savedTime) {
+                audio.currentTime = savedTime;
+            }
+
+            // 播放音频
+            function audioAutoPlay() {
+                audio.play().catch(function (e) {
+                    console.log('Auto-play was prevented:', e);
+                    // 提示用户进行交互以播放音频
+                    document.addEventListener('click', function () {
+                        audio.play().catch(function (e) {
+                            console.log('Playback failed:', e);
+                        });
+                    });
+                });
+            }
+
+            audioAutoPlay();
+
+            // 每隔一段时间保存当前播放时间
+            setInterval(function () {
+                if (!audio.paused) {  // 仅在音频播放时保存时间
+                    localStorage.setItem('audioCurrentTime', audio.currentTime);
+                }
+            }, 1000); // 每秒保存一次
+        });
+    </script>
  
     <header>
         <img src="image/logo.png" alt="Logo" class="logo">
@@ -331,31 +373,6 @@
 </footer>
 
 
-
-<script>
-   document.addEventListener('DOMContentLoaded', function () {
-       function audioAutoPlay() {
-           var audio = document.getElementById('background-music');
-
-           // 先自动静音播放
-           audio.muted = true;
-           audio.play().then(function() {
-               // 播放成功后再取消静音
-               audio.muted = false;
-           }).catch(function (e) {
-               console.log('Auto-play was prevented:', e);
-               // 如果自动播放被阻止，可以提示用户交互
-           });
-
-           // 兼容微信浏览器
-           document.addEventListener("WeixinJSBridgeReady", function () {
-               audio.play();
-           }, false);
-       }
-
-       audioAutoPlay();
-   });
-</script>
-    
+   
 </body>
 </html>
